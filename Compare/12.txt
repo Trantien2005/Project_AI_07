@@ -72,3 +72,11 @@ time: 0.3126
 depth: 0
 result: No solution found.
 
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 170242
+generated: 170319
+time: 30.0113
+depth: 0
+result: No solution found.
+

@@ -47,3 +47,41 @@ generated: 215558
 time: 31.7386
 depth: 56
 
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 1513
+generated: 1533
+time: 0.2322
+depth: 50
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 1491
+generated: 1509
+time: 0.3148
+depth: 50
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 1511
+generated: 1531
+time: 0.3051
+depth: 50
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 186423
+generated: 186447
+time: 30.0045
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 1313
+generated: 1361
+time: 0.1553
+depth: 56
+result: Solution found.
+

@@ -4,7 +4,22 @@ import time
 import numpy as np
 from needed_function import find_player, state_key, is_goal_state, next_states, find_boxes, heuristic, MOVES, is_stuck
 
-def q_learning(initial_grid, goals, episodes=5000, alpha=0.1, gamma=0.95, epsilon=0.2):
+def save_results_to_file(filename, results):
+    """
+    Ghi kết quả vào file .txt.
+    Input:
+        - filename: str - đường dẫn file (ví dụ: 'Compare/1.txt').
+        - results: dict - chứa thông tin kết quả của thuật toán.
+    """
+    with open(filename, 'a') as f:
+        f.write("===== RESULTS =====\n")
+        for algo_name, metrics in results.items():
+            f.write(f"Algorithm: {algo_name}\n")
+            for key, value in metrics.items():
+                f.write(f"{key}: {value}\n")
+            f.write("\n")
+
+def q_learning(initial_grid, goals, map_number, episodes=5000, alpha=0.1, gamma=0.95, epsilon=0.2, timeout=30):
     """
     Giải Sokoban bằng Q-learning.
     Input:
@@ -21,13 +36,16 @@ def q_learning(initial_grid, goals, episodes=5000, alpha=0.1, gamma=0.95, epsilo
     player_pos = find_player(initial_grid)
     if not player_pos:
         print("Không tìm thấy người chơi")
-        return None, {
+        info =  {
             "expanded": 0,
             "generated": 0,
             "time": 0.0,
             "depth": 0,
             "result": "No player found."
         }
+        filename = f"Compare/{map_number + 1}.txt"
+        save_results_to_file(filename, {"Q-Learning": info})
+        return None, info
 
     # Khởi tạo Q-table
     q_table = {}
@@ -52,6 +70,9 @@ def q_learning(initial_grid, goals, episodes=5000, alpha=0.1, gamma=0.95, epsilo
     for episode in range(episodes):
         if episode % 1000 == 0:
             print(f"Đang huấn luyện episode {episode}/{episodes}")
+        if time.time() - start_time > timeout:
+            print(f"Timeout: Dừng Q-Learning sau {timeout} giây")
+            break
         grid = copy.deepcopy(initial_grid)
         player_pos = find_player(grid)
         states = [copy.deepcopy(grid)]
@@ -59,6 +80,9 @@ def q_learning(initial_grid, goals, episodes=5000, alpha=0.1, gamma=0.95, epsilo
         max_steps = 1000  # Tăng giới hạn bước mỗi episode
 
         while step < max_steps:
+            if time.time() - start_time > timeout:
+                print(f"Timeout: Dừng Q-Learning sau {timeout} giây")
+                break
             state = state_key(grid, player_pos)
             action = choose_action(state, epsilon)
             expanded_nodes += 1
@@ -127,8 +151,11 @@ def q_learning(initial_grid, goals, episodes=5000, alpha=0.1, gamma=0.95, epsilo
         "time": round(end_time - start_time, 4),
         "depth": len(solution_states) - 1 if solution_states else 0,
         "episodes": episodes,
-        "result": "Solution found." if solution_states else "No solution found."
+        "result": "Solution found." if solution_states else "Timeout after 30s." if (time.time() - start_time > timeout)  else "No solution found."
     }
+# Ghi kết quả vào file
+    filename = f"Compare/{map_number + 1}.txt"
+    save_results_to_file(filename, {"Q-Learning": info})
 
     if solution_states:
         print(f"Tìm thấy lời giải sau {len(solution_states) - 1} bước")

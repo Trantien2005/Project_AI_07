@@ -82,3 +82,28 @@ generated: 33050
 time: 3.7672
 depth: 57
 
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 11977
+generated: 12097
+time: 1.4336
+depth: 93
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 159332
+generated: 159411
+time: 30.0157
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 61413
+generated: 56009
+time: 30.0019
+depth: 0
+episodes: 5000
+result: Timeout after 30s.
+

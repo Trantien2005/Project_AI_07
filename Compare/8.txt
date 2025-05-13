@@ -49,3 +49,11 @@ depth: 90
 beam_width: 100
 result: No solution found.
 
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 160292
+generated: 160315
+time: 30.0054
+depth: 0
+result: No solution found.
+

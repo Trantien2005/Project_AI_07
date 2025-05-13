@@ -293,21 +293,23 @@ while running:
             list_board, res = backtracking_fc.backtracking_fc(deepcopy(grid), checkpoints[map_number])
         elif algorithm == "Q-Learning":
             grid = [list(row) for row in maps[map_number]]
-            list_board, res = q_learning.q_learning(deepcopy(grid), checkpoints[map_number])
+            list_board, res = q_learning.q_learning(deepcopy(grid), checkpoints[map_number], map_number, timeout=30)
         elif algorithm == "And-Or Search":
             grid = [list(row) for row in maps[map_number]]
             list_board, res = and_or_search.and_or_search(deepcopy(grid), checkpoints[map_number])
         if list_board:
-            filename = f"Compare/{map_number + 1}.txt"
-            save_results_to_file(filename, {f"{algorithm}": res})
+            if algorithm != "Q-Learning":
+                filename = f"Compare/{map_number + 1}.txt"
+                save_results_to_file(filename, {f"{algorithm}": res})
             state_length = len(list_board)
             current_state = 0
             found = True
             scene_state = "playing"
         else:
-            res["result"] = "No solution found."
-            filename = f"Compare/{map_number + 1}.txt"
-            save_results_to_file(filename, {f"{algorithm}": res})
+            if algorithm != "Q-Learning":
+                res["result"] = "No solution found."
+                filename = f"Compare/{map_number + 1}.txt"
+                save_results_to_file(filename, {f"{algorithm}": res})
             found = False
             state_length = 0
             current_state = 0

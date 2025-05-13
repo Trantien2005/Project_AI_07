@@ -27,3 +27,58 @@ time: 30.001
 depth: 0
 result: No solution found.
 
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 42836
+generated: 45427
+time: 7.7044
+depth: 44
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 15433
+generated: 17845
+time: 2.9355
+depth: 44
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 34510
+generated: 37302
+time: 6.2863
+depth: 44
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 153013
+generated: 153063
+time: 30.0082
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 6221
+generated: 6292
+time: 0.7074
+depth: 62
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 157623
+generated: 157668
+time: 30.0062
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 66046
+generated: 60651
+time: 30.0006
+depth: 0
+episodes: 5000
+result: Timeout after 30s.
+

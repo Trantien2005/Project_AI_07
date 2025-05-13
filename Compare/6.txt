@@ -55,3 +55,11 @@ generated: 52160
 time: 5.163
 depth: 64
 
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 56937
+generated: 56937
+time: 5.2278
+depth: 0
+result: No solution found.
+
