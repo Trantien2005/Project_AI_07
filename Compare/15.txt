@@ -1,0 +1,35 @@
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 45093
+generated: 45093
+time: 4.801
+depth: 114
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 45081
+generated: 45089
+time: 5.356
+depth: 114
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 813
+generated: 896
+time: 0.1136
+depth: 172
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 252414
+generated: 252421
+time: 25.0046
+depth: 114
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 689
+generated: 689
+time: 0.0505
+depth: 91
+

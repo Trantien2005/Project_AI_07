@@ -1,0 +1,74 @@
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 2411
+generated: 2549
+time: 0.2609
+depth: 109
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8897
+generated: 8910
+time: 1.0248
+depth: 89
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 1049
+generated: 1126
+time: 0.1582
+depth: 111
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 5215
+generated: 5279
+time: 0.474
+depth: 94
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 285487
+generated: 285505
+time: 30.0072
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 6815
+generated: 6815
+time: 0.3184
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 5215
+generated: 5279
+time: 0.4806
+depth: 94
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 4764
+generated: 4848
+time: 0.4701
+depth: 94
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 5180
+generated: 5241
+time: 0.5058
+depth: 94
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 6815
+generated: 6815
+time: 0.3126
+depth: 0
+result: No solution found.
+

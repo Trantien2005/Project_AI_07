@@ -1,0 +1,650 @@
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 9182
+generated: 9527
+time: 1.192
+depth: 70
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4390
+generated: 4580
+time: 0.4632
+depth: 70
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.048
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0518
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0627
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0473
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0504
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0389
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0966
+depth: 70
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 9182
+generated: 9527
+time: 1.0209
+depth: 70
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4390
+generated: 4580
+time: 0.479
+depth: 70
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4390
+generated: 4580
+time: 0.4972
+depth: 70
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4390
+generated: 4580
+time: 0.5393
+depth: 70
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 10822
+generated: 13501
+time: 1.1548
+depth: 70
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 10822
+generated: 13501
+time: 1.1094
+depth: 70
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4390
+generated: 4580
+time: 0.4794
+depth: 70
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 10822
+generated: 13501
+time: 1.1931
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0995
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0486
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.059
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 10.7782
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0167
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 10.7624
+depth: 70
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 389
+generated: 438
+time: 0.0496
+depth: 74
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.023
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0249
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0583
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0535
+depth: 70
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 10822
+generated: 13501
+time: 1.1654
+depth: 70
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 9182
+generated: 9527
+time: 1.0319
+depth: 70
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 389
+generated: 438
+time: 0.0407
+depth: 74
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.1182
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.3378
+depth: 70
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 348
+generated: 401
+time: 0.0925
+depth: 96
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 32795
+generated: 30024
+time: 15.0341
+depth: 614
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 289
+generated: 386
+time: 0.0399
+depth: 96
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 289
+generated: 386
+time: 0.0451
+depth: 96
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 57
+generated: 57
+time: 0.0052
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 59
+generated: 59
+time: 0.0055
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 57
+generated: 57
+time: 0.0117
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 3204
+generated: 3204
+time: 0.2393
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 401028
+generated: 401028
+time: 55.0928
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 3966
+generated: 3966
+time: 0.2804
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 441
+generated: 441
+time: 0.0282
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 441
+generated: 441
+time: 0.0301
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 441
+generated: 441
+time: 0.0259
+depth: 20
+beam_width: 2000
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 441
+generated: 441
+time: 0.0222
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 441
+generated: 441
+time: 0.0295
+depth: 20
+beam_width: 2000
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 480832
+generated: 480849
+time: 30.0017
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0247
+depth: 70
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 7801
+generated: 6985
+time: 2.2426
+depth: 616
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 10759
+generated: 10902
+time: 1.1067
+depth: 70
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 348
+generated: 401
+time: 0.0422
+depth: 96
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 49451
+generated: 49451
+time: 4.5571
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 545759
+generated: 545759
+time: 56.5026
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 5764
+generated: 8332
+time: 0.5576
+depth: 15
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 5764
+generated: 8332
+time: 0.4964
+depth: 15
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 21595
+generated: 21595
+time: 2.3777
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 1746
+generated: 1746
+time: 0.1352
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 6
+generated: 11
+time: 0.0016
+depth: 2
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 510
+generated: 555
+time: 0.0381
+depth: 16
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 231
+generated: 293
+time: 0.025
+depth: 16
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 4164
+generated: 3815
+time: 1.0273
+depth: 122
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 30
+generated: 61
+time: 0.002
+depth: 20
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 4104
+generated: 3788
+time: 1.1818
+depth: 82
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 510
+generated: 555
+time: 0.0636
+depth: 16
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 231
+generated: 293
+time: 0.0253
+depth: 16
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 454
+generated: 522
+time: 0.0662
+depth: 16
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 22
+generated: 45
+time: 0.0095
+depth: 20
+
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 30
+generated: 61
+time: 0.008
+depth: 20
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 348
+generated: 401
+time: 0.0596
+depth: 96
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.3987
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 1513
+generated: 1533
+time: 0.2765
+depth: 50
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 1491
+generated: 1509
+time: 0.1487
+depth: 50
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 1511
+generated: 1531
+time: 0.1821
+depth: 50
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 273381
+generated: 273408
+time: 30.0044
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 578222
+generated: 551803
+time: 200.3036
+depth: 188
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 9182
+generated: 9527
+time: 0.9546
+depth: 70
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 10759
+generated: 10902
+time: 1.1118
+depth: 70
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 348
+generated: 401
+time: 0.0402
+depth: 96
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 10649
+generated: 9566
+time: 3.2388
+depth: 502
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 50672
+generated: 46475
+time: 15.2098
+depth: 528
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 48658
+generated: 44464
+time: 14.2277
+depth: 512
+episodes: 5000
+result: Solution found.
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0536
+depth: 70
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 348
+generated: 401
+time: 0.0451
+depth: 96
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.1455
+depth: 70
+

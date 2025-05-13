@@ -1,0 +1,29 @@
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 2232
+generated: 2370
+time: 0.1808
+depth: 30
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 2232
+generated: 2370
+time: 0.19
+depth: 30
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 1513
+generated: 1533
+time: 0.1556
+depth: 50
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 349587
+generated: 349602
+time: 30.001
+depth: 0
+result: No solution found.
+

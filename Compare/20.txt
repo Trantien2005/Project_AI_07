@@ -1,0 +1,44 @@
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 642
+generated: 652
+time: 0.0504
+depth: 95
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 689
+generated: 689
+time: 0.0743
+depth: 91
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 689
+generated: 689
+time: 0.0783
+depth: 91
+
+===== RESULTS =====
+Algorithm: IDDFS
+expanded: 499
+generated: 499
+time: 1.6566
+depth: 79
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 689
+generated: 689
+time: 0.0769
+depth: 91
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 689
+generated: 689
+time: 0.0684
+depth: 91
+

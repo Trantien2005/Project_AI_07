@@ -1,0 +1,28 @@
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5186
+generated: 5213
+time: 0.7339
+depth: 80
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 5257
+generated: 5281
+time: 0.7797
+depth: 80
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 1569
+generated: 1668
+time: 0.3656
+depth: 118
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 1569
+generated: 1668
+time: 0.1846
+depth: 118
+

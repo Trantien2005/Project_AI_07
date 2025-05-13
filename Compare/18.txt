@@ -1,0 +1,21 @@
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 92241
+generated: 96381
+time: 12.4046
+depth: 79
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 12434
+generated: 12622
+time: 1.5492
+depth: 105
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 152756
+generated: 198401
+time: 21.9239
+depth: 79
+

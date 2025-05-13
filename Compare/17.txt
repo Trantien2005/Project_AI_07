@@ -1,0 +1,24 @@
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 6362
+generated: 7459
+time: 0.8257
+depth: 139
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 122924
+generated: 138508
+time: 13.1013
+depth: 80
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 12859
+generated: 14869
+time: 1.2819
+depth: 163
+beam_width: 100
+result: No solution found.
+

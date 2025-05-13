@@ -1,0 +1,84 @@
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 3949
+generated: 4788
+time: 0.4294
+depth: 57
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 1076
+generated: 1175
+time: 0.113
+depth: 69
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 345627
+generated: 352455
+time: 36.6674
+depth: 57
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 318677
+generated: 325047
+time: 39.188
+depth: 57
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 222371
+generated: 233329
+time: 31.2471
+depth: 57
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 370
+generated: 435
+time: 0.0665
+depth: 67
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 32550
+generated: 33050
+time: 3.9133
+depth: 57
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 25725
+generated: 26674
+time: 3.3848
+depth: 57
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 306
+generated: 353
+time: 0.0634
+depth: 67
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 32550
+generated: 33050
+time: 3.7624
+depth: 57
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 25725
+generated: 26674
+time: 4.328
+depth: 57
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 32550
+generated: 33050
+time: 3.7672
+depth: 57
+

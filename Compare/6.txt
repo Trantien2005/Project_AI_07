@@ -1,0 +1,57 @@
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 51897
+generated: 52160
+time: 5.437
+depth: 64
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 48146
+generated: 49032
+time: 5.7512
+depth: 64
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 51798
+generated: 66800
+time: 6.0739
+depth: 64
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 15047
+generated: 15577
+time: 1.6827
+depth: 106
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 51788
+generated: 52058
+time: 5.7644
+depth: 64
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 51897
+generated: 52160
+time: 5.2475
+depth: 64
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 15047
+generated: 15577
+time: 1.624
+depth: 106
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 51897
+generated: 52160
+time: 5.163
+depth: 64
+

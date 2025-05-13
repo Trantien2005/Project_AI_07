@@ -1,0 +1,22 @@
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 11273
+generated: 12991
+time: 1.1219
+depth: 61
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 121372
+generated: 125329
+time: 12.5932
+depth: 55
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 74897
+generated: 84785
+time: 7.851
+depth: 55
+beam_width: 2000
+

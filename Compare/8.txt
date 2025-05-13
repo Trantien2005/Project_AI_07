@@ -1,0 +1,51 @@
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 61465
+generated: 62778
+time: 7.116
+depth: 43
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 96150
+generated: 97882
+time: 11.3156
+depth: 45
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 7181
+generated: 7510
+time: 0.9856
+depth: 84
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 102379
+generated: 102899
+time: 11.7806
+depth: 49
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 1922
+generated: 2033
+time: 0.2236
+depth: 84
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 36658
+generated: 38125
+time: 4.3791
+depth: 49
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 6731
+generated: 7515
+time: 0.7653
+depth: 90
+beam_width: 100
+result: No solution found.
+

@@ -1,0 +1,29 @@
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 39564
+generated: 40637
+time: 5.9228
+depth: 130
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 39564
+generated: 40637
+time: 5.7751
+depth: 130
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 581468
+generated: 619154
+time: 130.1905
+depth: 76
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 229662
+generated: 229739
+time: 30.0294
+depth: 0
+result: No solution found.
+

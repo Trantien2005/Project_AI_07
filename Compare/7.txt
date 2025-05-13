@@ -1,0 +1,49 @@
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 90213
+generated: 92454
+time: 14.4231
+depth: 131
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 299116
+generated: 342408
+time: 46.091
+depth: 44
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 549
+generated: 641
+time: 0.0717
+depth: 80
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 549
+generated: 641
+time: 0.0697
+depth: 80
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 2721
+generated: 2877
+time: 0.3981
+depth: 94
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 211421
+generated: 215558
+time: 31.8206
+depth: 56
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 211421
+generated: 215558
+time: 31.7386
+depth: 56
+

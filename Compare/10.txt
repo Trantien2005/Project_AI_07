@@ -1,0 +1,14 @@
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 8006
+generated: 8220
+time: 1.1211
+depth: 135
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 315021
+generated: 324182
+time: 40.1322
+depth: 63
+

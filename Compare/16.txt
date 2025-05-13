@@ -1,0 +1,29 @@
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 1512
+generated: 1531
+time: 0.1435
+depth: 50
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 1511
+generated: 1531
+time: 0.2335
+depth: 50
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 550
+generated: 586
+time: 0.0504
+depth: 52
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 550
+generated: 586
+time: 0.0489
+depth: 52
+

@@ -1,0 +1,7 @@
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 5341
+generated: 5368
+time: 0.6087
+depth: 99
+

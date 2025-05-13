@@ -1,0 +1,183 @@
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 158881
+generated: 169543
+time: 12.3154
+depth: 34
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 74855
+generated: 88514
+time: 7.2122
+depth: 34
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 149998
+generated: 218302
+time: 14.9495
+depth: 34
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 86005
+generated: 94133
+time: 7.8472
+depth: 38
+
+===== RESULTS =====
+Algorithm: IDDFS
+expanded: 71050
+generated: 71050
+time: 41.6178
+depth: 38
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 3006
+generated: 3079
+time: 0.3103
+depth: 34
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 2215
+generated: 2417
+time: 0.2532
+depth: 34
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 1580
+generated: 1771
+time: 0.1676
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 158881
+generated: 169543
+time: 14.6303
+depth: 34
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 53704
+generated: 65395
+time: 5.6408
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 150465
+generated: 160495
+time: 14.0069
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 3006
+generated: 3079
+time: 0.2915
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8845
+generated: 9143
+time: 0.8096
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 158881
+generated: 169543
+time: 15.9125
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8845
+generated: 9143
+time: 0.803
+depth: 34
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 2055
+generated: 2460
+time: 0.2143
+depth: 34
+
+===== RESULTS =====
+Algorithm: Dijkstra
+expanded: 8603
+generated: 11355
+time: 0.9417
+depth: 34
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 2532
+generated: 2998
+time: 0.2499
+depth: 34
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8845
+generated: 9143
+time: 0.8325
+depth: 34
+
+===== RESULTS =====
+Algorithm: Greedy Best First Search
+expanded: 5036
+generated: 5296
+time: 0.5186
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8845
+generated: 9143
+time: 0.7591
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8845
+generated: 9143
+time: 0.7771
+depth: 34
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.5515
+depth: 34
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.5249
+depth: 34
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8845
+generated: 9143
+time: 0.7537
+depth: 34
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.559
+depth: 34
+
