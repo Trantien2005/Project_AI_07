@@ -191,6 +191,9 @@ Hệ thống hoạt động theo ba giai đoạn chính:
 ```bash
    pip install pygame==2.6.1
    pip install Pillow==10.4.0
+```
+
+
 ---
 
 ```bash
