@@ -10,6 +10,9 @@ import beam
 import backtracking_fc
 import q_learning  
 import and_or_search  
+import tkinter as tk
+from tkinter import scrolledtext
+from copy import deepcopy
 
 #Khởi tạo Pygame
 pygame.init()
@@ -17,8 +20,9 @@ pygame.mixer.init()
 screen = pygame.display.set_mode((700, 700))
 pygame.display.set_caption("Sokoban")
 clock = pygame.time.Clock()
+
 #Biến toàn cục
-scene_state = "init"  # init, loading, executing, playing, end (Màn hình ban đầu là init)
+scene_state = "start"  # start, init, loading, executing, playing, end (Màn hình ban đầu là start)
 algorithms = ["Breadth First Search", "A Star Search", "Beam Search", "Backtracking FC", "Q-Learning", "And-Or Search"] #Thuật toán để chọn
 algorithm = algorithms[0]  # Thuật toán mặc định hiển thị ban đầu
 map_number = 0
@@ -26,13 +30,13 @@ current_state = 0
 state_length = 0    
 found = False
 
-
 #Tải hình ảnh
 TILE_SIZE = 64  # Kích thước mỗi ô vuông
 try:
     asset = 'Assets/'  # Đường dẫn đến thư mục chứa ảnh
     for file in os.listdir(asset):
         if file.endswith('.png') or file.endswith('.jpg') or file.endswith('.gif'):
+            start_img = pygame.image.load(os.path.join(asset, "loading.png")).convert() #Hình nền giao diện ban đầu
             background = pygame.image.load(os.path.join(asset, "900.jpg")) #Hình nền khởi động
             floor_img = pygame.image.load(os.path.join(asset, "164.jpg")).convert() #Nền đất
             box_img = pygame.image.load(os.path.join(asset, "box64.png")).convert_alpha() #Thùng hàng
@@ -64,7 +68,7 @@ except pygame.error as e:
     print(f"Error loading sound: {e}")
     pygame.quit()
     exit()
-    
+
 """Quy ước:
 # tường
 " " khoảng trống
@@ -94,7 +98,6 @@ def load_checkpoints_from_folder(folder_path):
     Mỗi checkpoint là một list các tuple (x, y) tương ứng với tọa độ của goal.
     """
     checkpoints = []
-
     for file in os.listdir(folder_path):
         if file.endswith('.txt'):
             file_path = os.path.join(folder_path, file)
@@ -109,6 +112,7 @@ def load_checkpoints_from_folder(folder_path):
     return checkpoints
 checkpoint_path = 'Checkpoints/' #Đường dẫn đến thư mục chứa các file checkpoint
 checkpoints = load_checkpoints_from_folder(checkpoint_path)
+
 def save_results_to_file(filename,results):
     with open(filename, 'a') as f:
         f.write("===== RESULTS =====\n")
@@ -118,52 +122,40 @@ def save_results_to_file(filename,results):
                 f.write(f"{key}: {value}\n")
             f.write("\n")
 
-import tkinter as tk
-from tkinter import scrolledtext
 #Sử dụng tkinter làm cửa sổ hiển thị kết quả các thuật toán.
 def show_result_window(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         content = f.read()
-
     result_window = tk.Tk()
     result_window.title("Kết quả so sánh thuật toán")
     result_window.geometry("500x400")
-
     text_area = scrolledtext.ScrolledText(result_window, wrap=tk.WORD)
     text_area.pack(expand=True, fill='both')
     text_area.insert(tk.END, content)
     text_area.configure(state='disabled')  # không cho sửa
-
     result_window.mainloop()
 
 def render_map(map):
- 
     tile_size = 64  
     bg_width = 700
     bg_height = 650
-
     width = len(map[0])
     height = len(map)
-
     # Tính tỉ lệ scale để map vừa nền
     scale_x = bg_width / (width * tile_size)
     scale_y = (bg_height - 250) / (height * tile_size)  # trừ phần trên là UI
     scale = min(scale_x, scale_y)
-
     # Căn giữa map
     total_map_width = width * tile_size * scale
     total_map_height = height * tile_size * scale
     offset_x = (bg_width - total_map_width) // 2
     offset_y = 240 + ((bg_height - 250 - total_map_height) // 2)
-
     for row in range(height):
         for col in range(width):
             tile = map[row][col]
             x = int(col * tile_size * scale + offset_x)
             y = int(row * tile_size * scale + offset_y)
-
             screen.blit(pygame.transform.scale(floor_img, (int(tile_size * scale), int(tile_size * scale))), (x, y))
-
             if tile == '#':
                 screen.blit(pygame.transform.scale(box_wall_img, (int(tile_size * scale), int(tile_size * scale))), (x, y))
             elif tile == '@':
@@ -174,12 +166,12 @@ def render_map(map):
                 screen.blit(pygame.transform.scale(player_img, (int(tile_size * scale), int(tile_size * scale))), (x, y))
 
 # ==== Functions ====
-def init_game(map_number):
+def start_screen():
     # Vẽ background
     #init.play(-1)# Phát nhạc nền
     #init.set_volume(0.5)# Giảm âm lượng nhạc nền
     screen.blit(background, (0, 0))
-
+    
     # Title "Sokoban"
     # title_font = pygame.font.Font('C:/Users/Admin/Documents/Zalo Received Files/AIProject (2)/AIProject/Font/VT.ttf', 160)
     # title_text = title_font.render('Sokoban', True, (255, 215, 0))
@@ -192,20 +184,29 @@ def init_game(map_number):
     # desc_rect = desc_text.get_rect(center=(350, 195))
     # screen.blit(desc_text, desc_rect)
 
-    # Level display
+    #Level display
+    screen.blit(start_img, (0, 0))
+    font = pygame.font.Font("Font/VT.ttf", 40) #Font chữ cho thông báo
+    text = font.render("Nhấn ENTER để bắt đầu", True, (255, 255, 255)) #Thông báo nhấn Enter
+    text_rect = text.get_rect(center=(350, 650)) #Căn giữa văn bản
+    screen.blit(text, text_rect)
+
+def init_game(map_number):
+    #Vẽ background
+    screen.blit(background, (0, 0))
+    #Hiển thị số thứ tự bản đồ
     map_font = pygame.font.SysFont('Font/Poppins-Regular.ttf', 25)
     map_text = map_font.render(f"Map. {map_number + 1}", True, (255, 0, 0))
     map_rect = map_text.get_rect(center=(350, 230))
     screen.blit(map_text, map_rect)
     render_map(maps[map_number])
-    
     screen.blit(arrow_left_img, (10, 450))  # Mũi tên trái
     screen.blit(arrow_right_img, (650, 450))  # Mũi tên phải
-    
     algorithm_font = pygame.font.SysFont('Font/Poppins-Regular.ttf', 40)
     algorithm_text = algorithm_font.render(f"{algorithm}", True, (255, 0, 0))
     algorithm_rect = algorithm_text.get_rect(center=(350, 660))
     screen.blit(algorithm_text, algorithm_rect)
+
 def loading_game():
     #loading.play(-1)  # Phát nhạc loading
     frames = []
@@ -250,6 +251,7 @@ def loading_game():
             if event.type == pygame.QUIT:
                 running = False
     pygame.time.wait(100)  
+
 def end_game(found, list_board):
     screen.blit(background, (0, 0))
     render_map(list_board)
@@ -262,14 +264,14 @@ def end_game(found, list_board):
     screen.blit(text, text_rect)
     pygame.display.flip()
     pygame.time.wait(1000)  # Chờ 1 giây trước khi thoát
-    
-from copy import deepcopy
+
 # ==== Main Game Loop ====
 running = True
 while running:
     screen.fill((0, 0, 0))
-
-    if scene_state == "init":
+    if scene_state == "start":
+        start_screen() #Hiển thị màn hình giao diện ban đầu
+    elif scene_state == "init":
         init_game(map_number)
     elif scene_state == "loading":
         #init.stop()  # Dừng nhạc nền
@@ -286,7 +288,7 @@ while running:
         elif algorithm == "Beam Search":
             grid = [list(row) for row in maps[map_number]]
             list_board, res = beam.beam_search(deepcopy(grid), checkpoints[map_number])
-        elif algorithm == "Backtracking FC":  # Thêm điều kiện cho thuật toán mới
+        elif algorithm == "Backtracking FC":
             grid = [list(row) for row in maps[map_number]]
             list_board, res = backtracking_fc.backtracking_fc(deepcopy(grid), checkpoints[map_number])
         elif algorithm == "Q-Learning":
@@ -330,7 +332,6 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT and scene_state == "init":
                 map_number = (map_number + 1) 
@@ -348,17 +349,19 @@ while running:
                 chanel.play(change_algorithm)
                 algorithm = algorithms[(algorithms.index(algorithm) + 1) % len(algorithms)]
             if event.key == pygame.K_RETURN:
-                if scene_state  == "init":
+                if scene_state == "start":
+                    scene_state = "init" #Chuyển từ màn hình giao diện sang chọn map
+                elif scene_state == "init":
                     scene_state = "loading"
-                elif scene_state == 'end':
+                elif scene_state == "end":
                     scene_state = "init"
                     map_number = 0
                     found = False
                     current_state = 0
                     state_length = 0
                     list_board = []
-                elif scene_state == 'playing':
-                    scene_state = 'end'
+                elif scene_state == "playing":
+                    scene_state = "end"
             if event.key == pygame.K_ESCAPE:
                 show_result_window(f"Compare/{map_number+1}.txt")
     pygame.display.flip()

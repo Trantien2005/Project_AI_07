@@ -20,3 +20,10 @@ time: 7.851
 depth: 55
 beam_width: 2000
 
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 2232
+generated: 2370
+time: 0.1727
+depth: 30
+

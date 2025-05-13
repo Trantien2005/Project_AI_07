@@ -181,3 +181,49 @@ generated: 6049
 time: 0.559
 depth: 34
 
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 8845
+generated: 9143
+time: 0.8047
+depth: 34
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.5365
+depth: 34
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 8590
+generated: 8856
+time: 0.8328
+depth: 34
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 307424
+generated: 307484
+time: 30.0109
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 303170
+generated: 303229
+time: 30.0161
+depth: 0
+result: No solution found.
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 8590
+generated: 8856
+time: 8.1611
+depth: 34
+beam_width: 2000
+

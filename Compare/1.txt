@@ -648,3 +648,52 @@ generated: 11037
 time: 1.1455
 depth: 70
 
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.069
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.1209
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0835
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0678
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0581
+depth: 70
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0614
+depth: 70
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 348
+generated: 401
+time: 0.0509
+depth: 96
+
