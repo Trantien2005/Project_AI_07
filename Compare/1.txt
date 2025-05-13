@@ -1,0 +1,9 @@
+===== RESULTS =====
+Algorithm: Q-Learning
+expanded: 44807
+generated: 40934
+time: 14.1579
+depth: 624
+episodes: 5000
+result: Solution found.
+
