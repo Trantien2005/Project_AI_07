@@ -364,7 +364,7 @@ Fully Observable vs. Partially Observable Environment in AI. GeeksforGeeks. [Ful
 
 ---
 
-Tác giả:
+## Tác giả:
  
 - Nhóm 07: 
 
