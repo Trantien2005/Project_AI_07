@@ -82,3 +82,10 @@ generated: 9527
 time: 1.3639
 depth: 70
 
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.0863
+depth: 70
+
