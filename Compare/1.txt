@@ -7,3 +7,78 @@ depth: 624
 episodes: 5000
 result: Solution found.
 
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 10759
+generated: 10902
+time: 1.6939
+depth: 70
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Backtracking FC
+expanded: 348
+generated: 401
+time: 0.1
+depth: 96
+
+===== RESULTS =====
+Algorithm: Breadth First Search
+expanded: 10893
+generated: 11037
+time: 1.484
+depth: 70
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 9182
+generated: 9527
+time: 1.4869
+depth: 70
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 10759
+generated: 10902
+time: 1.6064
+depth: 70
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 10759
+generated: 10902
+time: 1.6947
+depth: 70
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 10759
+generated: 10902
+time: 1.5846
+depth: 70
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 9182
+generated: 9527
+time: 1.3704
+depth: 70
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4390
+generated: 4580
+time: 0.6849
+depth: 70
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 9182
+generated: 9527
+time: 1.3639
+depth: 70
+

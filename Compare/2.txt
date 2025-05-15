@@ -227,3 +227,55 @@ time: 8.1611
 depth: 34
 beam_width: 2000
 
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.7875
+depth: 34
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 8590
+generated: 8856
+time: 1.1847
+depth: 34
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.7945
+depth: 34
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 2532
+generated: 2998
+time: 0.3925
+depth: 34
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.7451
+depth: 34
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 2532
+generated: 2998
+time: 0.391
+depth: 34
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 5451
+generated: 6049
+time: 0.7773
+depth: 34
+

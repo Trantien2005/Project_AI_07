@@ -222,78 +222,114 @@ Project_AI_07/
 
 | Thuật toán           | Map 1 (Dễ)     | Map 14 (TB)   | Map 3 (Khó)   |
 |----------------------|----------------|---------------|---------------|
-| BFS                  | 1.05s, 70 bước | 7.70s         | 36.67s        |
-| A*                   | 0.95s, 70      | 2.94s         | 31.25s        |
-| Backtracking FC      | 0.08s, 96      | Timeout       | Timeout       |
-| Beam Search (w=2000) | 0.18s, 50      | 6.29s         | 0.43s         |
-| And-Or Search        | 0.04s, 96      | 0.71s         | 1.43s         |
-| Q-Learning           | 200.3s, 188    | Timeout       | Timeout       |
+| BFS                  | 1.05s, 70 bước | 7.70s, 44 bước       | 36.67s, 57 bước        |
+| A*                   | 0.95s, 70 bước      | 2.94s, 44 bước         | 31.25s, 57 bước        |
+| Backtracking FC      | 0.08s, 96 bước      | Timeout       | Timeout       |
+| Beam Search (w=2000) | 0.18s, 50 bước      | 6.29s, 44 bước         | 0.43s, 57 bước         |
+| And-Or Search        | 0.04s, 96 bước      | 0.71s, 62 bước         | 1.43s, 93 bước         |
+| Q-Learning           | 200.3s, 188 bước    | Timeout       | Timeout       |
 
 ---
 
 ##  Phân tích hiệu suất
 
-And-Or Search:
+**And-Or Search:**
+
 Hiệu suất: Nhanh nhất (0.04s–1.43s), tìm giải pháp trên cả ba map, với số node mở rộng thấp (289–11977).
+
 Nhận xét: Ổn định, linh hoạt, phù hợp cho mọi mức độ khó. Là lựa chọn tối ưu.
-Backtracking FC:
+
+**Backtracking FC:**
+
 Hiệu suất: Rất nhanh trên Map 1 (0.08s, 348 node), nhưng timeout (30s) trên Map 14 và Map 3, không tìm thấy giải pháp.
+
 Nhận xét: Hiệu quả trên bản đồ dễ, nhưng không ổn định trên bản đồ phức tạp do không gian tìm kiếm lớn.
-A Search*:
+
+**A Search*:**
+
 Hiệu suất: Nhanh hơn BFS (0.95s–31.25s), giảm số node nhờ heuristic Manhattan, nhưng vẫn chậm trên Map 3.
+
 Nhận xét: Phù hợp cho map dễ đến trung bình, cần heuristic mạnh hơn cho map khó.
-BFS:
+
+**BFS:**
+
 Hiệu suất: Ổn định nhưng chậm (1.05s–36.67s), tốn tài nguyên do khám phá toàn bộ không gian trạng thái.
+
 Nhận xét: Đảm bảo giải pháp ngắn nhất, nhưng không hiệu quả trên map khó.
-Beam Search:
+
+**Beam Search:**
+
 Hiệu suất: Nhanh (0.18s–6.29s) với beam width 2000, nhưng không giải được một số map khó.
+
 Nhận xét: Tiết kiệm tài nguyên, nhưng phụ thuộc vào tham số beam width.
-Q-Learning:
+
+**Q-Learning:**
+
 Hiệu suất: Chậm (200.3s trên Map 1), timeout trên Map 14 và Map 3, số bước cao (188).
+
 Nhận xét: Cần tối ưu tham số (alpha, gamma, epsilon) và tăng thời gian để cải thiện hội tụ.
-So sánh tổng quan
+
+**So sánh tổng quan**
+
 Hiệu suất cao nhất: And-Or Search dẫn đầu về tốc độ, độ tin cậy, và số bước hợp lý (93–96).
+
 Hiệu suất trung bình: A* và BFS hoạt động tốt trên map dễ/trung bình, nhưng chậm trên map khó.
+
 Hiệu suất thấp: Backtracking FC và Q-Learning gặp hạn chế trên map phức tạp; Beam Search cần điều chỉnh tham số.
 
 ---
 
 ## Hạn chế
 
-Beam Search: Chưa tối ưu beam width, dẫn đến bỏ sót giải pháp trên một số map khó.
-Q-Learning: Thời gian hội tụ chậm, cần điều chỉnh tham số và tăng số episode hoặc timeout.
-Quản lý tài nguyên: Hệ thống tốn bộ nhớ, đặc biệt với BFS và A* trên map lớn.
-Thời gian thực thi: Một số thuật toán (BFS, Q-Learning) có thời gian chạy dài trên map phức tạp.
-Heuristic: Heuristic hiện tại (khoảng cách Manhattan) chưa tối ưu cho các trường hợp deadlock phức tạp.
+**Beam Search:** Chưa tối ưu beam width, dẫn đến bỏ sót giải pháp trên một số map khó.
+
+**Q-Learning:** Thời gian hội tụ chậm, cần điều chỉnh tham số và tăng số episode hoặc timeout.
+
+**Quản lý tài nguyên:** Hệ thống tốn bộ nhớ, đặc biệt với BFS và A* trên map lớn.
+
+**Thời gian thực thi:** Một số thuật toán (BFS, Q-Learning) có thời gian chạy dài trên map phức tạp.
+
+**Heuristic:** Heuristic hiện tại (khoảng cách Manhattan) chưa tối ưu cho các trường hợp deadlock phức tạp.
 ## Định hướng phát triển
 
 - Tối ưu hóa thuật toán:
-Cải thiện heuristic cho A* và Beam Search, kết hợp kiểm tra deadlock.
-Tối ưu Q-Learning bằng cách điều chỉnh alpha, gamma, epsilon, hoặc áp dụng Deep Reinforcement Learning.
-Thêm thuật toán như IDA* để xử lý map phức tạp với ít bộ nhớ hơn.
-Quản lý tài nguyên:
-Giảm node mở rộng không cần thiết, tối ưu cấu trúc dữ liệu (ví dụ: hash table để lưu trạng thái).
-Tăng hiệu suất bằng cách sử dụng luồng riêng (multithreading) cho giao diện và tính toán.
-Mở rộng tính năng:
-Hỗ trợ biến thể Sokoban (nhiều người chơi, bản đồ động, thùng đa dạng).
-Thêm chế độ chơi thủ công để người dùng tự giải và so sánh với thuật toán.
-Tích hợp giao diện web hoặc ứng dụng di động để tăng khả năng tiếp cận.
-Cải thiện GUI:
-Thêm tính năng lưu/ghi lại quá trình chơi.
-Hỗ trợ tùy chỉnh bản đồ (map editor).
-Cải thiện hiệu ứng đồ họa và âm thanh để tăng trải nghiệm người dùng.
+
+  - Cải thiện heuristic cho A* và Beam Search, kết hợp kiểm tra deadlock.
+  - Tối ưu Q-Learning bằng cách điều chỉnh alpha, gamma, epsilon, hoặc áp dụng Deep Reinforcement Learning.
+  - Thêm thuật toán như IDA* để xử lý map phức tạp với ít bộ nhớ hơn.
+- Quản lý tài nguyên:
+  - Giảm node mở rộng không cần thiết, tối ưu cấu trúc dữ liệu (ví dụ: hash table để lưu trạng thái).
+  - Tăng hiệu suất bằng cách sử dụng luồng riêng (multithreading) cho giao diện và tính toán.
+- Mở rộng tính năng:
+  - Hỗ trợ biến thể Sokoban (nhiều người chơi, bản đồ động, thùng đa dạng).
+  - Thêm chế độ chơi thủ công để người dùng tự giải và so sánh với thuật toán.
+  - Tích hợp giao diện web hoặc ứng dụng di động để tăng khả năng tiếp cận.
+- Cải thiện GUI:
+  - Thêm tính năng lưu/ghi lại quá trình chơi.
+  - Hỗ trợ tùy chỉnh bản đồ (map editor).
+  - Cải thiện hiệu ứng đồ họa và âm thanh để tăng trải nghiệm người dùng.
 
 ---
 
 ## Tài liệu tham khảo
 
-Chatterjee, R. (2020). Fundamental concepts of artificial intelligence and its applications. Journal of Mathematical Problems, Equations and Statistics. Link.
-Chowdhary, K. R. (2020). Fundamentals of Artificial Intelligence. Springer. Link.
-Sokoban. Puzzle Wiki. Link.
-Junghanns & Schaeffer (1998). Sokoban: Evaluating standard single-agent search techniques in the presence of deadlock. Link.
-Russell, S. J., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach (4th Ed.). Pearson. Link.
-Virkkala, T. (2004). Solving Sokoban. Master's thesis, University of Turku. Link.
-Pygame Documentation. Link.
-GitHub Repository for Testcases. Link.
-Fully Observable vs. Partially Observable Environment in AI. GeeksforGeeks. Link.
+Chatterjee, R. (2020). Fundamental concepts of artificial intelligence and its applications.
+
+Journal of Mathematical Problems, Equations and Statistics. [Mathematical Journal](https://www.mathematicaljournal.com/)
+
+Chowdhary, K. R. (2020). Fundamentals of Artificial Intelligence. Springer. [Fundamentals of Artificial Intelligence.](https://dlib.ptit.edu.vn/handle/HVCNBCVT/2258)
+
+Sokoban. Puzzle Wiki. [Sokoban. Puzzle Wiki](https://en.wikipedia.org/wiki/Sokoban).
+
+Junghanns & Schaeffer (1998). Sokoban: Evaluating standard single-agent search techniques in the presence of deadlock. [Junghanns & Schaeffer (1998)](https://en.wikipedia.org/wiki/Junghanns_%26_Schaeffer_(1998)._Sokoban:_Evaluating_standard_single-agent_search_techniques_in_the_presence_of_deadlockSokoban).
+
+Russell, S. J., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach (4th Ed.). Pearson. [Russell, S. J., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach (4th Ed.)](https://aima.cs.berkeley.edu/).
+
+Virkkala, T. (2004). Solving Sokoban. Master's thesis, University of Turku. [Virkkala, T. (2004). Solving Sokoban. Master's thesis, University of Turku.](https://www.researchgate.net/publication/228569467_Sokoban_Reversed_Solving_Bachelor_Thesis).
+
+Pygame Documentation. [Pygame Documentation](https://www.pygame.org/docs/).
+
+GitHub Repository for Testcases. [GithubNguyenCongSon2402](https://github.com/NguyenCongSon2402/Sokoban).
+
+Fully Observable vs. Partially Observable Environment in AI. GeeksforGeeks. [Fully Observable vs. Partially Observable Environment in AI.](https://www.geeksforgeeks.org/fully-observable-vs-partially-observable-environment-in-ai/).
 

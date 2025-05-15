@@ -107,3 +107,40 @@ depth: 0
 episodes: 5000
 result: Timeout after 30s.
 
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 25725
+generated: 26674
+time: 4.7762
+depth: 57
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 32016
+generated: 32679
+time: 6.008
+depth: 57
+beam_width: 2000
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 25725
+generated: 26674
+time: 4.491
+depth: 57
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4190
+generated: 4613
+time: 0.7614
+depth: 57
+beam_width: 100
+
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 25725
+generated: 26674
+time: 4.5409
+depth: 57
+

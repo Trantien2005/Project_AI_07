@@ -27,3 +27,18 @@ generated: 2370
 time: 0.1727
 depth: 30
 
+===== RESULTS =====
+Algorithm: A Star Search
+expanded: 1231
+generated: 1378
+time: 0.1857
+depth: 30
+
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 2182
+generated: 2319
+time: 0.2669
+depth: 30
+beam_width: 2000
+

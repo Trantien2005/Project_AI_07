@@ -3,7 +3,7 @@ import copy
 import time
 from needed_function import find_player, state_key, is_goal_state, next_states, find_boxes, heuristic
 
-def beam_search(initial_grid, goals, beam_width=2000):
+def beam_search(initial_grid, goals, beam_width=100):
     """
     Giải Sokoban bằng Beam Search.
     Input:
