@@ -25,8 +25,8 @@ def and_or_search(initial_grid, goals, max_depth=100):
         }
 
     # Khởi tạo
-    expanded_nodes = [0]  # Dùng list để cập nhật trong hàm đệ quy
-    generated_nodes = [1]
+    expanded_nodes = [0]  # Dùng list để cập nhật trong hàm đệ quy 
+    generated_nodes = [1] #Khởi tạo danh sách theo dõi node đã được tạo ra
     visited = set()  # Lưu các trạng thái đã thăm
 
     def solve_or(grid, player_pos, states, g, depth):

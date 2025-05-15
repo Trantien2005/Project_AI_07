@@ -254,7 +254,7 @@ Project_AI_07/
 | BFS                  | 1.05s, 70 bước | 7.70s, 44 bước       | 36.67s, 57 bước        |
 | A*                   | 0.95s, 70 bước      | 2.94s, 44 bước         | 31.25s, 57 bước        |
 | Backtracking FC      | 0.08s, 96 bước      | Timeout 30s       | Timeout 30s       |
-| Beam Search (w=2000) | 0.18s, 50 bước      | 6.29s, 44 bước         | 0.43s, 57 bước         |
+| Beam Search (w=100)  | 0.18s, 50 bước      | 6.29s, 44 bước         | 0.43s, 57 bước         |
 | And-Or Search        | 0.04s, 96 bước      | 0.71s, 62 bước         | 1.43s, 93 bước         |
 | Q-Learning           | 200.3s, 188 bước    | Timeout 30s       | Timeout 30s       |
 
