@@ -136,18 +136,11 @@ Dự án đặt ra các mục tiêu cụ thể để đảm bảo tính toàn di
 
 ## Các thành phần chính
 
-### 1. Bài toán Sokoban
-(Đã mô tả chi tiết trong phần Lý thuyết)
-
-### 2. Thuật toán tìm kiếm
-(Đã mô tả chi tiết trong phần Lý thuyết)
-
-### 3. Giao diện người dùng (GUI)
+### Giao diện người dùng (GUI)
 
 Giao diện được xây dựng bằng **Pygame**, cung cấp trải nghiệm trực quan với các màn hình:
 
 - **Màn hình khởi động**: Tiêu đề “Sokoban game cat”, nhấn Enter để bắt đầu chọn map.
-#### 💡 Giao diện trò chơi Sokoban
 
 <p align="center">
   <img src="Assets/loading.png" width="300"/>
@@ -155,26 +148,45 @@ Giao diện được xây dựng bằng **Pygame**, cung cấp trải nghiệm t
   <em>Màn hình khởi động: Sokoban game cat</em>
 </p>
 
-- **Màn hình khởi động**:
+- **Màn hình chọn map**:
   - Hiển thị tiêu đề “Sokoban”, danh sách bản đồ, và thuật toán.
   - Điều khiển: **Space** (đổi thuật toán), **Enter** (chạy), **Esc** (xem kết quả), mũi tên trái/phải (chọn bản đồ).
-#### 💡 Giao diện chọn map
 
 <p align="center">
   <img src="Assets/Map.png" width="300"/>
   <br>
-  <em>Màn hình Map</em>
+  <em>Giao diện Map</em>
 </p>
 
 - **Màn hình tải**:
   - Hiệu ứng thanh tiến trình (3 giây) với thông điệp “Are you ready?”.
   - Hỗ trợ animation GIF (sử dụng Pillow).
+
+<p align="center">
+  <img src="Assets/Manhinhtai.png" width="300"/>
+  <br>
+  <em>Màn hình tải Sokoban</em>
+</p>
+
 - **Màn hình chơi**:
   - Cập nhật bản đồ động, hiển thị từng bước di chuyển của người chơi và thùng.
   - Hỗ trợ theo dõi quá trình giải bài toán.
+
+<p align="center">
+  <img src="Assets/play.png" width="300"/>
+  <br>
+  <em>Màn hình giải Sokoban</em>
+</p>
+
 - **Màn hình kết thúc**:
   - Hiển thị “YOU WIN!” (màu vàng) nếu thành công, “YOU LOSE!” (màu đỏ) nếu thất bại.
   - Nhấn **Enter** để quay lại màn hình khởi động.
+
+<p align="center">
+  <img src="Assets/end.png" width="300"/>
+  <br>
+  <em>Màn hình kết thúc Sokoban</em>
+</p>
 
 ### 4. Cấu trúc hệ thống
 
@@ -350,3 +362,14 @@ GitHub Repository for Testcases. [GithubNguyenCongSon2402](https://github.com/Ng
 
 Fully Observable vs. Partially Observable Environment in AI. GeeksforGeeks. [Fully Observable vs. Partially Observable Environment in AI.](https://www.geeksforgeeks.org/fully-observable-vs-partially-observable-environment-in-ai/).
 
+---
+
+Tác giả:
+ 
+- Nhóm 07: 
+
+	|   Họ tên sinh viên     |   MSSV   |   Mức độ đóng góp | 
+	|----------------------- |----------|-------------------|
+	|  Nguyễn Quốc Đạt       | 23133015 |        100%       | 
+	|  Trần Thảo Tiến        | 23133076 |        100%       | 
+	|  Nguyễn Thị Ngọc Trinh | 23133079 |        100%       | 
