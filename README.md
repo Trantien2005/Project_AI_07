@@ -62,6 +62,7 @@ Dự án triển khai sáu thuật toán tìm kiếm để giải bài toán Sok
   - Độ phức tạp không gian: `O(b^d)`.
 
 #### 2.3. Backtracking with Forward Checking (Backtracking FC)
+##### 2.3.1 Tổng quan thuật toán
 - **Mô tả**: Backtracking FC là thuật toán tìm kiếm theo chiều sâu, kết hợp kiểm tra ràng buộc (Forward Checking) để loại bỏ sớm các nhánh dẫn đến deadlock.
 - **Cơ chế**:
   - Dùng đệ quy để khám phá trạng thái, chọn hành động (di chuyển hoặc đẩy) và kiểm tra tính hợp lệ.
@@ -70,20 +71,160 @@ Dự án triển khai sáu thuật toán tìm kiếm để giải bài toán Sok
 - **Ưu điểm**: Tiết kiệm tài nguyên trên bản đồ đơn giản.
 - **Nhược điểm**: Không hiệu quả trên bản đồ phức tạp, dễ timeout do độ sâu lớn.
 - **Công thức**:
-  - Độ phức tạp thời gian: `O(b^d)`, nhưng Forward Checking giảm số nhánh.
-  - Độ phức tạp không gian: `O(d)`.
+  - Độ phức tạp thời gian: O(b^d), với b là số nhánh trung bình (branching factor, thường là 4 hướng di chuyển nhưng giảm nhờ Forward Checking), d là độ sâu tối đa.
+  - Độ phức tạp không gian: O(d), vì chỉ lưu trữ một đường đi tại mỗi thời điểm (trên stack đệ quy).
+##### 2.3.2 Áp dụng vào bản đồ Sokoban
+Bước 1: Khởi tạo
 
+**Logic xử lý:**
+Thuật toán bắt đầu bằng cách ghi lại thời gian để kiểm tra timeout (30 giây).
+
+Xác định vị trí người chơi (P) và kiểm tra xem có tồn tại không. Nếu không, trả về thông báo lỗi.
+
+Tạo trạng thái ban đầu bao gồm: bản đồ, vị trí người chơi, và danh sách trạng thái (chỉ chứa bản đồ ban đầu).
+
+Khởi tạo một tập hợp để lưu các trạng thái đã duyệt, tránh lặp, và các biến đếm số node mở rộng (bắt đầu từ 0) và sinh ra (bắt đầu từ 1).
+
+Bước 2: Khám phá trạng thái bằng đệ quy
+
+**Logic xử lý:**
+Bắt đầu đệ quy từ trạng thái ban đầu với độ sâu 0.
+
+Tại mỗi bước:
+
+Kiểm tra thời gian chạy, nếu vượt 30 giây, dừng và trả về không có giải pháp.
+Tăng số node mở rộng (mỗi trạng thái được xử lý là một node mở rộng).
+Kiểm tra nếu trạng thái hiện tại là trạng thái mục tiêu (tất cả thùng ở đích). Nếu đúng, trả về danh sách trạng thái dẫn đến giải pháp.
+Kiểm tra độ sâu, nếu vượt quá giới hạn (120), dừng nhánh hiện tại và quay lui.
+
+Bước 3: Sinh trạng thái kế tiếp
+
+**Logic xử lý:**
+Sinh tất cả trạng thái con bằng cách thử 4 hướng di chuyển (U, D, L, R)
+
+**Kiểm tra ràng buộc:**
+Kiểm tra trạng thái mới có lặp không (so với các trạng thái đã duyệt).
+
+Kiểm tra deadlock (Forward Checking)
+
+Tính heuristic: Khoảng cách Manhattan từ thùng đến đích
+
+Thêm trạng thái con vào danh sách, tăng số node sinh ra.
+
+Bước 4: Sắp xếp và tiếp tục đệ quy
+
+**Logic xử lý:**
+Sắp xếp các trạng thái con theo giá trị heuristic
+
+Đi sâu vào trạng thái con
+Kiểm tra trạng thái mục tiêu
+
+Bước 5: Kết thúc
+
+**Logic xử lý:**
+Khi tìm thấy giải pháp, trả về danh sách trạng thái (các bước từ bản đồ ban đầu đến giải pháp).
+
+Tính toán thống kê: số node mở rộng, sinh ra, thời gian thực thi, và độ sâu (số bước).
+
+Trả về kết quả và thông tin thống kê.
+##### 2.3.3 Phân tích kỹ thuật
+**Forward Checking:**
+Kiểm tra deadlock giúp giảm số nhánh cần khám phá. 
+
+Tuy nhiên, kiểm tra deadlock hiện tại có thể không đủ chặt (không xét người chơi chắn đường), dẫn đến việc khám phá các nhánh không cần thiết.
+
+**Heuristic:**
+
+Heuristic khoảng cách Manhattan đơn giản, không tính đến tường hoặc người chơi chắn đường, nên đôi khi không phản ánh chính xác độ khó của trạng thái.
+
+**Quản lý trạng thái đã duyệt:**
+
+Việc thêm và xóa trạng thái khỏi tập hợp đã duyệt mỗi khi quay lui gây tốn tài nguyên, đặc biệt trên bản đồ lớn.
+##### 2.3.4 Ưu và nhược điểm
+**Ưu điểm:**
+Hiệu quả trên bản đồ nhỏ nhờ Forward Checking giảm không gian tìm kiếm.
+
+Đảm bảo tìm giải pháp nếu có (nếu không timeout).
+
+**Nhược điểm:**
+
+Trên bản đồ phức tạp, không gian trạng thái lớn (branching factor cao), dễ timeout hoặc vượt độ sâu tối đa.
+
+Quản lý trạng thái đã duyệt không tối ưu, tốn thời gian thêm/xóa liên tục.
 #### 2.4. Beam Search
-- **Mô tả**: Beam Search là biến thể của Greedy Search, giữ lại số lượng trạng thái tốt nhất (beam width) mỗi tầng, đánh giá bằng heuristic.
-- **Cơ chế**:
-  - Tại mỗi bước, sinh tất cả trạng thái con và chọn top `k` trạng thái (beam width) có giá trị heuristic nhỏ nhất.
-  - Sử dụng heuristic khoảng cách Manhattan tương tự A*.
-- **Ưu điểm**: Giảm không gian tìm kiếm, nhanh trên bản đồ đơn giản.
-- **Nhược điểm**: Có thể bỏ sót giải pháp tối ưu nếu beam width nhỏ.
-- **Công thức**:
-  - Độ phức tạp thời gian: `O(k · d)`, với `k` là beam width.
-  - Độ phức tạp không gian: `O(k)`.
+##### 2.4.1. Tổng quan thuật toán
 
+**Mô tả:** Beam Search là một biến thể của Greedy Search, giữ lại beam_width trạng thái tốt nhất mỗi tầng, dựa vào heuristic để định hướng.
+
+**Cơ chế:**
+
+Tìm kiếm theo tầng (level-by-level), không quay lui.
+
+Tại mỗi tầng, sinh tất cả trạng thái con, chọn top beam_width trạng thái có heuristic nhỏ nhất.
+
+Sử dụng heuristic khoảng cách Manhattan.
+
+**Công thức:**
+
+Độ phức tạp thời gian: O(k · d), với k là beam_width, d là độ sâu.
+
+Độ phức tạp không gian: O(k), vì chỉ lưu trữ beam_width trạng thái mỗi tầng.
+##### 2.4.2 Áp dụng vào bản đồ Sokoban
+Bước 1: Khởi tạo
+
+**Logic xử lý:**
+
+Ghi lại thời gian bắt đầu.
+
+Xác định vị trí người chơi và vị trí thùng
+
+Tính heuristic ban đầu: Khoảng cách từ thùng đến đích 
+
+Tạo trạng thái ban đầu: (heuristic, số bước, bản đồ, vị trí người chơi, danh sách trạng thái).
+
+Khởi tạo tầng đầu tiên với trạng thái ban đầu, tập hợp trạng thái đã duyệt, và các biến đếm node.
+
+Bước 2: Tìm kiếm theo tầng
+**Logic xử lý:**
+Thêm trạng thái con vào tầng tiếp theo, tăng số node sinh ra.
+
+Bước 3: Chọn trạng thái tốt nhất
+
+**Logic xử lý:**
+
+Chọn beam_width (mặc định 100) trạng thái có heuristic nhỏ nhất. 
+
+Bước 4: Tầng tiếp theo
+
+Bước 5: Kết thúc
+
+**Logic xử lý:**
+
+Khi tìm thấy giải pháp, trả về danh sách trạng thái và thông tin thống kê (số node mở rộng, sinh ra, thời gian, độ sâu, beam_width).
+##### 2.4.3. Phân tích kỹ thuật
+Heuristic:
+
+Cũng dùng khoảng cách Manhattan, nhưng không kiểm tra deadlock, dẫn đến khả năng khám phá các nhánh không khả thi.
+
+Giới hạn beam_width:
+
+beam_width = 100 đủ lớn cho bản đồ nhỏ, nhưng trên bản đồ lớn, nếu beam_width nhỏ hơn số trạng thái tiềm năng, có thể bỏ sót giải pháp.
+
+Không quay lui:
+
+Beam Search không quay lại các trạng thái bị bỏ, điều này tiết kiệm tài nguyên nhưng làm mất tính hoàn chỉnh (không đảm bảo tìm giải pháp nếu có).
+##### 2.4.4. Ưu và nhược điểm
+**Ưu điểm:**
+
+Tiết kiệm không gian và thời gian bằng cách chỉ giữ beam_width trạng thái mỗi tầng.
+
+Nhanh hơn Backtracking FC trên bản đồ đơn giản.
+
+**Nhược điểm:**
+
+Có thể bỏ sót giải pháp nếu beam_width nhỏ.
+
+Không kiểm tra deadlock, dễ bị mắc kẹt trong các trạng thái không khả thi.
 #### 2.5. And-Or Search
 - **Mô tả**: And-Or Search chia bài toán thành các node AND (yêu cầu giải quyết tất cả trạng thái con, ví dụ: đẩy tất cả thùng đến đích) và OR (chọn hành động tốt nhất).
 - **Cơ chế**:
