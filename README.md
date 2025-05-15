@@ -147,9 +147,14 @@ Dự án đặt ra các mục tiêu cụ thể để đảm bảo tính toàn di
 Giao diện được xây dựng bằng **Pygame**, cung cấp trải nghiệm trực quan với các màn hình:
 
 - **Màn hình khởi động**: Tiêu đề “Sokoban game cat”, nhấn Enter để bắt đầu chọn map.
-   ## 💡 Giao diện trò chơi Sokoban
+## 💡 Giao diện trò chơi Sokoban
 
-![Sokoban Demo](Assets/loading.png)
+<p align="center">
+  <img src="Assets/loading.png" width="450"/>
+  <br>
+  <em>Màn hình khởi động: Sokoban game cat</em>
+</p>
+
 
 - **Màn hình khởi động**:
   - Hiển thị tiêu đề “Sokoban”, danh sách bản đồ, và thuật toán.
