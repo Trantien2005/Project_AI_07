@@ -144,3 +144,11 @@ generated: 26674
 time: 4.5409
 depth: 57
 
+===== RESULTS =====
+Algorithm: And-Or Search
+expanded: 11977
+generated: 12097
+time: 0.7351
+depth: 93
+result: Solution found.
+

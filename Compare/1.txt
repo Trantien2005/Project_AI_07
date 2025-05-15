@@ -89,3 +89,11 @@ generated: 11037
 time: 1.0863
 depth: 70
 
+===== RESULTS =====
+Algorithm: Beam Search
+expanded: 4390
+generated: 4580
+time: 0.689
+depth: 70
+beam_width: 100
+

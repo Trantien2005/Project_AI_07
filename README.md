@@ -2,6 +2,10 @@
 
 ## Lý thuyết
 
+### Cơ sơ lý thuyết của Môi trường Quan sát Một phần (Partially Observable Environments)
+
+Sự phát triển nhanh chóng của công nghệ và trí tuệ nhân tạo (AI) đã mở ra nhiều cơ hội để nghiên cứu các bài toán giải đố như Sokoban, đặc biệt trong lĩnh vực thuật toán tìm kiếm. Sokoban là một trò chơi logic cổ điển, trong đó người chơi (P) có nhiệm vụ đẩy các thùng (@) đến vị trí đích (1) trên một bản đồ dạng lưới có tường (#), tuân theo các ràng buộc: chỉ được đẩy thùng (không kéo), mỗi ô chỉ chứa tối đa một thùng hoặc người chơi, và thùng không thể được đẩy vào tường hoặc ô đã có thùng khác. Mặc dù luật chơi đơn giản, Sokoban lại sở hữu không gian trạng thái rất phức tạp, tạo nên một thử thách lý tưởng để tìm kiếm đường đi tối ưu dựa trên thiết kế bản đồ, kích thước và số lượng thùng. Quá trình nghiên cứu được tiến hành theo từng giai đoạn với độ phức tạp tăng dần, phù hợp cho nhiều cấp độ hiểu biết và kỹ năng. Hơn nữa, Sokoban còn mang lại giá trị ứng dụng thực tế, chẳng hạn như hỗ trợ lập kế hoạch di chuyển cho robot hoặc tìm đường trong các mạng lưới giao thông phức tạp, đặc biệt trong những tình huống có không gian trạng thái lớn và nhiều chướng ngại vật
+
 ### 1. Bài toán Sokoban
 
 Sokoban là một trò chơi giải đố logic, được Hiroyuki Imabayashi phát triển vào năm 1982 tại Nhật Bản. Trong trò chơi, người chơi điều khiển một nhân vật (P) để đẩy các thùng hàng (@) đến các vị trí đích (1) trên một bản đồ lưới, với các ràng buộc nghiêm ngặt như không thể kéo thùng, không thể đẩy thùng qua tường (#) hoặc thùng khác, và mỗi ô chỉ chứa tối đa một thùng hoặc người chơi. Sokoban được chứng minh là bài toán **NP-Hard**, với không gian trạng thái tăng lũy thừa theo số thùng và kích thước bản đồ, khiến nó trở thành một bài toán lý tưởng để đánh giá hiệu quả của các thuật toán tìm kiếm trong trí tuệ nhân tạo (AI).

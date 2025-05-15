@@ -31,7 +31,7 @@ def and_or_search(initial_grid, goals, max_depth=100):
 
     def solve_or(grid, player_pos, states, g, depth):
         """
-        Hàm xử lý node OR: chọn hành động tốt nhất từ trạng thái hiện tại.
+        Hàm xử lý node OR: Đại diện cho một hành động, và từ trạng thái hiện tại, chúng ta sẽ tìm kiếm các hành động có thể thực hiện.
         """
         nonlocal expanded_nodes, generated_nodes
         expanded_nodes[0] += 1
