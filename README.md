@@ -224,10 +224,10 @@ Project_AI_07/
 |----------------------|----------------|---------------|---------------|
 | BFS                  | 1.05s, 70 bước | 7.70s, 44 bước       | 36.67s, 57 bước        |
 | A*                   | 0.95s, 70 bước      | 2.94s, 44 bước         | 31.25s, 57 bước        |
-| Backtracking FC      | 0.08s, 96 bước      | Timeout       | Timeout       |
+| Backtracking FC      | 0.08s, 96 bước      | Timeout 30s       | Timeout 30s       |
 | Beam Search (w=2000) | 0.18s, 50 bước      | 6.29s, 44 bước         | 0.43s, 57 bước         |
 | And-Or Search        | 0.04s, 96 bước      | 0.71s, 62 bước         | 1.43s, 93 bước         |
-| Q-Learning           | 200.3s, 188 bước    | Timeout       | Timeout       |
+| Q-Learning           | 200.3s, 188 bước    | Timeout 30s       | Timeout 30s       |
 
 ---
 
@@ -245,7 +245,7 @@ Hiệu suất: Rất nhanh trên Map 1 (0.08s, 348 node), nhưng timeout (30s) t
 
 Nhận xét: Hiệu quả trên bản đồ dễ, nhưng không ổn định trên bản đồ phức tạp do không gian tìm kiếm lớn.
 
-**A Search*:**
+**A(*) Search:**
 
 Hiệu suất: Nhanh hơn BFS (0.95s–31.25s), giảm số node nhờ heuristic Manhattan, nhưng vẫn chậm trên Map 3.
 
@@ -259,7 +259,7 @@ Nhận xét: Đảm bảo giải pháp ngắn nhất, nhưng không hiệu quả
 
 **Beam Search:**
 
-Hiệu suất: Nhanh (0.18s–6.29s) với beam width 2000, nhưng không giải được một số map khó.
+Hiệu suất: Nhanh (0.18s–6.29s) với beam width 100, nhưng không giải được một số map khó.
 
 Nhận xét: Tiết kiệm tài nguyên, nhưng phụ thuộc vào tham số beam width.
 
