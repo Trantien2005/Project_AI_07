@@ -150,7 +150,7 @@ Giao diện được xây dựng bằng **Pygame**, cung cấp trải nghiệm t
 ## 💡 Giao diện trò chơi Sokoban
 
 <p align="center">
-  <img src="Assets/loading.png" width="450"/>
+  <img src="Assets/loading.png" width="200"/>
   <br>
   <em>Màn hình khởi động: Sokoban game cat</em>
 </p>
