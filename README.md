@@ -566,6 +566,9 @@ Project_AI_07/
 
 ---
 
+## Demo Thuật toán BFS
+![Map Dễ](Video_gif_sokoban/BFS_De.gif_)
+
 ## Kết quả thử nghiệm
 
 | Thuật toán           | Map 1 (Dễ)     | Map 14 (TB)   | Map 3 (Khó)   |
