@@ -38,6 +38,7 @@ Sokoban là **NP-Hard** vì:
 Dự án triển khai sáu thuật toán tìm kiếm để giải bài toán Sokoban, chia thành hai nhóm: tìm kiếm không có thông tin (uninformed) và tìm kiếm có thông tin (informed), cùng với một thuật toán học tăng cường.
 
 #### 2.1. Breadth-First Search (BFS)
+##### 2.1.1 Tổng quan thuật toán
 - **Mô tả**: BFS là thuật toán tìm kiếm không có thông tin, duyệt tất cả trạng thái theo thứ tự độ sâu tăng dần, sử dụng hàng đợi FIFO.
 - **Cơ chế**:
   - Bắt đầu từ trạng thái ban đầu, sinh tất cả trạng thái con (di chuyển người chơi hoặc đẩy thùng).
@@ -48,8 +49,40 @@ Dự án triển khai sáu thuật toán tìm kiếm để giải bài toán Sok
 - **Công thức**:
   - Độ phức tạp thời gian: `O(b^d)`, với `b` là số nhánh trung bình và `d` là độ sâu giải pháp.
   - Độ phức tạp không gian: `O(b^d)`.
+##### 2.1.2 Áp dụng vào bản đồ Sokoban
+Bước 1: Khởi tạo
+**Logic xử lý:**
 
+Ghi lại thời gian.
+
+Tìm vị trí người chơi, nếu không có, trả về lỗi.
+
+Tạo trạng thái ban đầu và đặt vào hàng đợi FIFO.
+
+Khởi tạo tập hợp trạng thái đã duyệt.
+
+Bước 2: Tìm kiếm theo tầng
+
+**Logic xử lý:**
+
+Kiểm tra mục tiêu
+
+Sinh trạng thái con
+
+Logic xử lý:
+
+Khi đạt mục tiêu, trả về danh sách trạng thái và thông tin thống kê.
+
+##### 2.1.3 Phân tích kỹ thuật
+Hàng đợi FIFO:
+
+Đảm bảo giải pháp ngắn nhất (về số bước), nhưng hàng đợi có thể phình to trên bản đồ lớn.
+
+Quản lý trạng thái:
+
+Tập hợp trạng thái đã duyệt ngăn lặp, nhưng tốn bộ nhớ.
 #### 2.2. A* Search
+##### 2.2.1 Tổng quan thuật toán
 - **Mô tả**: A* là thuật toán tìm kiếm có thông tin, sử dụng hàm chi phí `f(n) = g(n) + h(n)`, trong đó `g(n)` là chi phí từ trạng thái ban đầu đến trạng thái hiện tại, và `h(n)` là heuristic ước lượng chi phí đến đích.
 - **Cơ chế**:
   - Sử dụng hàng đợi ưu tiên (min-heap) để chọn trạng thái có `f(n)` nhỏ nhất.
@@ -60,7 +93,67 @@ Dự án triển khai sáu thuật toán tìm kiếm để giải bài toán Sok
 - **Công thức**:
   - Độ phức tạp thời gian: `O(b^d)`, nhưng giảm đáng kể nếu heuristic tốt.
   - Độ phức tạp không gian: `O(b^d)`.
+##### 2.2.2 Áp dụng vào bản đồ Sokoban
+Bước 1: Khởi tạo
 
+**Logic xử lý:**
+
+Ghi lại thời gian để đo hiệu suất.
+
+Tìm vị trí người chơi và kiểm tra sự tồn tại. Nếu không có, trả về thông báo lỗi.
+
+Tìm vị trí các thùng ban đầu, tính heuristic ban đầu bằng khoảng cách Manhattan
+
+Khởi tạo trạng thái ban đầu với f = g + h. Trạng thái bao gồm: f, g, bản đồ, vị trí người chơi, và danh sách trạng thái.
+
+Đặt trạng thái ban đầu vào hàng đợi ưu tiên và thêm vào tập hợp trạng thái đã duyệt.
+
+Bước 2: Tìm kiếm bằng hàng đợi ưu tiên
+
+**Logic xử lý:**
+
+Lấy trạng thái có f nhỏ nhất từ hàng đợi.
+
+Tăng số node mở rộng.'
+
+Kiểm tra trạng thái
+
+Bước 3: Sinh trạng thái kế tiếp
+
+**Logic xử lý:**
+
+Sinh trạng thái con bằng cách thử 4 hướng di chuyển
+
+Bước 4: Tiếp tục khám phá
+
+**Logic xử lý:**
+
+Lấy trạng thái tiếp theo từ hàng đợi.
+
+Kiểm tra mục tiêu: Chưa đạt.
+
+Sinh trạng thái con
+
+Bước 5: Kết thúc
+
+**Logic xử lý:**
+
+Khi đạt trạng thái mục tiêu, trả về danh sách trạng thái và thông tin thống kê (số node mở rộng, sinh ra, thời gian, độ sâu).
+
+##### 2.2.3. Phân tích kỹ thuật
+Heuristic:
+
+Khoảng cách Manhattan không tính đến tường hoặc người chơi chắn đường, nên có thể đánh giá thấp chi phí thực tế.
+
+Tuy nhiên, heuristic này thỏa mãn tính đơn điệu (monotonic), đảm bảo A* tìm giải pháp tối ưu.
+
+Hàng đợi ưu tiên:
+
+Sử dụng min-heap giúp chọn trạng thái có f nhỏ nhất nhanh chóng, nhưng trên bản đồ lớn, hàng đợi có thể phình to, gây tốn bộ nhớ.
+
+Quản lý trạng thái đã duyệt:
+
+Tập hợp trạng thái đã duyệt đảm bảo không lặp, nhưng kích thước lớn trên bản đồ phức tạp làm tăng chi phí bộ nhớ.
 #### 2.3. Backtracking with Forward Checking (Backtracking FC)
 ##### 2.3.1 Tổng quan thuật toán
 - **Mô tả**: Backtracking FC là thuật toán tìm kiếm theo chiều sâu, kết hợp kiểm tra ràng buộc (Forward Checking) để loại bỏ sớm các nhánh dẫn đến deadlock.
@@ -140,17 +233,6 @@ Heuristic khoảng cách Manhattan đơn giản, không tính đến tường ho
 **Quản lý trạng thái đã duyệt:**
 
 Việc thêm và xóa trạng thái khỏi tập hợp đã duyệt mỗi khi quay lui gây tốn tài nguyên, đặc biệt trên bản đồ lớn.
-##### 2.3.4 Ưu và nhược điểm
-**Ưu điểm:**
-Hiệu quả trên bản đồ nhỏ nhờ Forward Checking giảm không gian tìm kiếm.
-
-Đảm bảo tìm giải pháp nếu có (nếu không timeout).
-
-**Nhược điểm:**
-
-Trên bản đồ phức tạp, không gian trạng thái lớn (branching factor cao), dễ timeout hoặc vượt độ sâu tối đa.
-
-Quản lý trạng thái đã duyệt không tối ưu, tốn thời gian thêm/xóa liên tục.
 #### 2.4. Beam Search
 ##### 2.4.1. Tổng quan thuật toán
 
@@ -213,19 +295,8 @@ beam_width = 100 đủ lớn cho bản đồ nhỏ, nhưng trên bản đồ l�
 Không quay lui:
 
 Beam Search không quay lại các trạng thái bị bỏ, điều này tiết kiệm tài nguyên nhưng làm mất tính hoàn chỉnh (không đảm bảo tìm giải pháp nếu có).
-##### 2.4.4. Ưu và nhược điểm
-**Ưu điểm:**
-
-Tiết kiệm không gian và thời gian bằng cách chỉ giữ beam_width trạng thái mỗi tầng.
-
-Nhanh hơn Backtracking FC trên bản đồ đơn giản.
-
-**Nhược điểm:**
-
-Có thể bỏ sót giải pháp nếu beam_width nhỏ.
-
-Không kiểm tra deadlock, dễ bị mắc kẹt trong các trạng thái không khả thi.
 #### 2.5. And-Or Search
+##### 2.5.1. Tổng quan thuật toán
 - **Mô tả**: And-Or Search chia bài toán thành các node AND (yêu cầu giải quyết tất cả trạng thái con, ví dụ: đẩy tất cả thùng đến đích) và OR (chọn hành động tốt nhất).
 - **Cơ chế**:
   - Xây dựng cây tìm kiếm với các node AND (trạng thái cần giải quyết nhiều thùng) và OR (lựa chọn hành động).
@@ -235,8 +306,60 @@ Không kiểm tra deadlock, dễ bị mắc kẹt trong các trạng thái khôn
 - **Công thức**:
   - Độ phức tạp thời gian: Phụ thuộc vào cấu trúc cây, thường nhỏ hơn BFS.
   - Độ phức tạp không gian: `O(b^d)`.
+##### 2.5.2 Áp dụng vào bản đồ Sokoban
+Bước 1: Khởi tạo
 
+**Logic xử lý:**
+
+Ghi lại thời gian để kiểm tra timeout.
+
+Tìm vị trí người chơi, nếu không có, trả về lỗi.
+
+Tạo trạng thái ban đầu với bản đồ, vị trí người chơi, và danh sách trạng thái.
+
+Khởi tạo biến đếm node và tập hợp trạng thái đã duyệt.
+
+Bước 2: Khám phá bằng đệ quy (node OR)
+
+**Logic xử lý:**
+
+Bắt đầu từ trạng thái ban đầu với độ sâu 0.
+
+Tăng số node mở rộng, kiểm tra độ sâu (giới hạn 100), trạng thái mục tiêu, và lặp.
+
+Sinh trạng thái con
+
+Kiểm tra deadlock
+
+Sắp xếp trạng thái con theo f(n).
+
+Bước 3: Xử lý node AND
+
+**Logic xử lý:**
+
+Trong Sokoban, mỗi hành động dẫn đến một trạng thái duy nhất, nên node AND chỉ gọi lại node OR để tiếp tục khám phá.
+
+Bước 4: Kết thúc
+
+**Logic xử lý:**
+
+Khi đạt mục tiêu, trả về danh sách trạng thái và thông tin thống kê.
+
+Nếu không tìm thấy, trả về thông tin thất bại.
+
+##### 2.5.3. Phân tích kỹ thuật
+Heuristic:
+
+Sử dụng khoảng cách Manhattan kết hợp với Forward Checking, giúp giảm số nhánh không khả thi.
+
+Cấu trúc cây:
+
+And-Or Search phù hợp với bài toán có nhiều mục tiêu (nhiều thùng)
+
+Giới hạn độ sâu:
+Giới hạn 100 có thể cắt ngắn giải pháp trên bản đồ phức tạp.
 #### 2.6. Q-Learning
+##### 2.6.1. Tổng quan thuật toán
 - **Mô tả**: Q-Learning là thuật toán học tăng cường, xây dựng bảng Q để tối ưu chiến lược qua thử nghiệm và phần thưởng.
 - **Cơ chế**:
   - Xác định trạng thái (vị trí người chơi, thùng), hành động (di chuyển, đẩy), và phần thưởng (đạt đích, phạt deadlock).
@@ -246,7 +369,58 @@ Không kiểm tra deadlock, dễ bị mắc kẹt trong các trạng thái khôn
 - **Nhược điểm**: Thời gian hội tụ chậm, cần tối ưu tham số (`α`, `γ`, `ε`).
 - **Công thức**:
   - Độ phức tạp thời gian: Phụ thuộc vào số - **Total Reward**: This is a measure of the total reward or return an agent receives over time, often discounted to prioritize immediate rewards.
+##### 2.6.2. Áp dụng vào bản đồ Sokoban
+Bước 1: Khởi tạo
 
+**Logic xử lý:**
+
+Ghi lại thời gian, kiểm tra timeout (30 giây).
+
+Tìm vị trí người chơi.
+
+Khởi tạo bảng Q trống, danh sách hành động (U, D, L, R), và các tham số (alpha, gamma, epsilon).
+
+Bước 2: Huấn luyện
+
+**Logic xử lý:**
+
+Chạy 5000 episode, mỗi episode:
+
+Sao chép bản đồ ban đầu.
+
+Chọn hành động bằng epsilon-greedy (khám phá ngẫu nhiên hoặc khai thác Q-value lớn nhất).
+
+Thực hiện hành động, tính phần thưởng:
+
+Đạt đích: +100.
+
+Deadlock: -50.
+
+Mỗi bước: -1.
+
+Dựa trên heuristic: -h * 0.01.
+
+Cập nhật bảng Q, giảm epsilon để ưu tiên khai thác.
+
+Bước 3: Kết thúc
+
+**Logic xử lý:**
+
+Nếu tìm thấy giải pháp, trả về danh sách trạng thái và thông tin thống kê.
+
+Nếu không, trả về thông tin thất bại và ghi vào file.
+
+##### 2.6.3. Phân tích kỹ thuật
+Phần thưởng:
+
+Hệ thống phần thưởng đa cấp định hướng tốt, nhưng cần cân chỉnh để tránh học sai.
+Epsilon-greedy:
+
+Giảm epsilon từ 0.2 xuống 0.01 giúp chuyển từ khám phá sang khai thác, nhưng quá trình này chậm.
+
+Bảng Q:
+
+Kích thước bảng Q lớn do không gian trạng thái rộng, cần tối ưu hóa.
 #### 2.7. Ứng dụng thực tế
 Các thuật toán tìm kiếm trong Sokoban có thể được áp dụng vào:
 - **Lập kế hoạch di chuyển robot**: Tối ưu đường đi trong không gian hạn chế (nhà kho, bệnh viện).
