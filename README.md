@@ -599,7 +599,7 @@ Project_AI_07/
 		  **Map Khó**
 
 ## Demo Thuật toán Backtracking FC
-![Map Dễ](Video_gif_sokoban/Backtracking_De.gif)
+![Map Dễ](Video_gif_sokoban/Backtracking_FC_De.gif)
            **Map Dễ**
 ## Demo Thuật toán Q-learning
 ![Map Dễ](Video_gif_sokoban/Q_learning_De.gif)
