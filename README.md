@@ -568,7 +568,44 @@ Project_AI_07/
 
 ## Demo Thuật toán BFS
 ![Map Dễ](Video_gif_sokoban/BFS_De.gif)
+           **Map Dễ**
+![Map Trung Bình ](Video_gif_sokoban/BFS_TrungBinh.gif)
+		   **Map Trung Bình**
+![Map Khó](Video_gif_sokoban/BFS_Kho.gif)
+		  **Map Khó**
 
+## Demo Thuật toán A*
+![Map Dễ](Video_gif_sokoban/A_Star_De.gif)
+           **Map Dễ**
+![Map Trung Bình ](Video_gif_sokoban/A_Star_TrungBinh.gif)
+		   **Map Trung Bình**
+![Map Khó](Video_gif_sokoban/A_Star_Kho.gif)
+		  **Map Khó**
+
+## Demo Thuật toán Beam Search
+![Map Dễ](Video_gif_sokoban/Beam_De.gif)
+           **Map Dễ**
+![Map Trung Bình ](Video_gif_sokoban/Beam_TrungBinh.gif)
+		   **Map Trung Bình**
+![Map Khó](Video_gif_sokoban/Beam_Kho.gif)
+		  **Map Khó**
+
+ ## Demo Thuật toán And-Or Search
+![Map Dễ](Video_gif_sokoban/And_Or_De.gif)
+           **Map Dễ**
+![Map Trung Bình ](Video_gif_sokoban/And_Or_TrungBinh.gif)
+		   **Map Trung Bình**
+![Map Khó](Video_gif_sokoban/And_Or_Kho.gif)
+		  **Map Khó**
+
+## Demo Thuật toán Backtracking FC
+![Map Dễ](Video_gif_sokoban/Backtracking_De.gif)
+           **Map Dễ**
+## Demo Thuật toán Q-learning
+![Map Dễ](Video_gif_sokoban/Q_learning_De.gif)
+           **Map Dễ**
+
+**Ghi Chú:** Thuật toán Backtracking FC và Q-learning timeout(30s) tại map trung bình và map khó.
 
 ## Kết quả thử nghiệm
 
