@@ -567,7 +567,8 @@ Project_AI_07/
 ---
 
 ## Demo Thuật toán BFS
-![Map Dễ](Video_gif_sokoban/BFS_De.gif_)
+![Map Dễ](Video_gif_sokoban/BFS_De.gif)
+
 
 ## Kết quả thử nghiệm
 
